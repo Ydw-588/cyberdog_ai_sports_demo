@@ -44,8 +44,8 @@ void Run(rclcpp::Node::SharedPtr node)
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
-  node = rclcpp::Node::make_shared("ai_sports_test");
-  RCLCPP_INFO(node->get_logger(), "Create ai__sports_test node.");
+  node = rclcpp::Node::make_shared("cyberdog_ai_sports_demo");
+  RCLCPP_INFO(node->get_logger(), "Create cyberdog_ai_sports_demo node.");
   std::thread process(&Run, node);
   auto ai_sports_client_ = node->create_client<SportSrv>("sport_manager");
   while (!ai_sports_client_->wait_for_service(std::chrono::seconds(1))) {

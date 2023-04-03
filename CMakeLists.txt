@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ai_sports_test)
+project(cyberdog_ai_sports_demo)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,11 +11,11 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(protocol REQUIRED)
 
-add_executable(ai_sports_test src/ai_sports_test.cpp)
-target_include_directories(ai_sports_test PUBLIC
+add_executable(cyberdog_ai_sports_demo src/cyberdog_ai_sports_demo.cpp)
+target_include_directories(cyberdog_ai_sports_demo PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-target_compile_features(ai_sports_test PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(cyberdog_ai_sports_demo PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 ament_target_dependencies(${PROJECT_NAME}
   rclcpp
   protocol
@@ -24,7 +24,7 @@ ament_target_dependencies(${PROJECT_NAME}
   # cyberdog_common
   std_msgs)
 
-install(TARGETS ai_sports_test
+install(TARGETS cyberdog_ai_sports_demo
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
